@@ -12,10 +12,7 @@ CREATE TABLE [Person].[Address] (
 		[SpatialLocation]     [geography] NULL,
 		[rowguid]             [uniqueidentifier] NOT NULL ROWGUIDCOL,
 		[ModifiedDate]        [datetime] NOT NULL,
-		[test]                [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[testColumn3]         [int] NULL,
-		[testColumn4]         [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-		[testColumn5]         [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[test]                [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [Person].[Address]
