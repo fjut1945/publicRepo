@@ -10,9 +10,7 @@ CREATE TABLE [Person].[Address] (
 		[StateProvinceID]     [int] NOT NULL,
 		[PostalCode]          [nvarchar](15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
 		[SpatialLocation]     [geography] NULL,
-		[rowguid]             [uniqueidentifier] NOT NULL ROWGUIDCOL,
-		[ModifiedDate]        [datetime] NOT NULL,
-		[test]                [nchar](10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+		[rowguid]             [uniqueidentifier] NOT NULL ROWGUIDCOL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ALTER TABLE [Person].[Address]
@@ -26,13 +24,6 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Primary key (clustered) constraint', 'SCHEMA', N'Person', 'TABLE', N'Address', 'CONSTRAINT', N'PK_Address_AddressID'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Clustered index created by a primary key constraint.', 'SCHEMA', N'Person', 'TABLE', N'Address', 'INDEX', N'PK_Address_AddressID'
-GO
-ALTER TABLE [Person].[Address]
-	ADD
-	CONSTRAINT [DF_Address_ModifiedDate]
-	DEFAULT (getdate()) FOR [ModifiedDate]
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Default constraint value of GETDATE()', 'SCHEMA', N'Person', 'TABLE', N'Address', 'CONSTRAINT', N'DF_Address_ModifiedDate'
 GO
 ALTER TABLE [Person].[Address]
 	ADD
@@ -66,8 +57,6 @@ GO
 EXEC sp_addextendedproperty N'MS_Description', N'Second street address line.', 'SCHEMA', N'Person', 'TABLE', N'Address', 'COLUMN', N'AddressLine2'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Name of the city.', 'SCHEMA', N'Person', 'TABLE', N'Address', 'COLUMN', N'City'
-GO
-EXEC sp_addextendedproperty N'MS_Description', N'Date and time the record was last updated.', 'SCHEMA', N'Person', 'TABLE', N'Address', 'COLUMN', N'ModifiedDate'
 GO
 EXEC sp_addextendedproperty N'MS_Description', N'Postal code for the street address.', 'SCHEMA', N'Person', 'TABLE', N'Address', 'COLUMN', N'PostalCode'
 GO
