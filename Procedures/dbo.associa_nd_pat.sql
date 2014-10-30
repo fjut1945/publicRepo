@@ -12,7 +12,7 @@ DECLARE
 SET XACT_ABORT ON  
 SET NOCOUNT ON  
   
-if @natur = 'PI' or @natur = 'MU' or left(@natur,1) = 'C'  
+if @natur = 'PIT' or @natur = 'MU' or left(@natur,1) = 'C'  
 begin  
  set @tipo = 'A'  
 end  
